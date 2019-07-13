@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
-import PhotoSection from './components/PhotoSection';
+import PhotoFeed from './components/PhotoFeed';
 export default function App() {
   return (
     <View>
       <Header text="Photos" />
-      <PhotoSection />
+      <PhotoFeed />
     </View>
   );
 }

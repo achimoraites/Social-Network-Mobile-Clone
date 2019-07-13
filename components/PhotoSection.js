@@ -14,16 +14,16 @@ export default class PhotoSection extends Component {
                 <View style={styles.userAvatarSection}>
                     <Image
                         style={styles.thumbnail}
-                        source={{ uri: 'http://www.freeavatarsonline.com/avatars/celebrities/krystal-forscutt-3-100x100.jpg' }} />
+                        source={{ uri: this.props.photo.user_avatar }} />
                     <View style={{justifyContent: 'center', padding: 5 }}>
-                        <Text style={styles.username}>username</Text>
+                        <Text style={styles.username}>{this.props.photo.username}</Text>
                     </View>
 
                 </View>
                 <View>
                     <Image
                         style={{ height: 300 }}
-                        source={{ uri: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1072&q=80' }} />
+                        source={{ uri: this.props.photo.image }} />
                 </View>
                 <View style={{paddingTop: 10, paddingBottom: 10}}>
                     <Ionicons
@@ -32,8 +32,8 @@ export default class PhotoSection extends Component {
                     />
                 </View>
                 <View style={styles.imageInfo}>
-                    <Text style={styles.username}>username</Text>
-                    <Text>caption</Text>
+                    <Text style={styles.username}>{this.props.photo.username}</Text>
+                    <Text>{this.props.photo.caption}</Text>
                 </View>
             </View>
         );
