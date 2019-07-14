@@ -1,4 +1,4 @@
 # Social Media Mobile Clone
 
 ## Current state
-<img style='max-width: 300px;' src='./demo.gif' />
+<img width="250" src='./demo.gif' />
