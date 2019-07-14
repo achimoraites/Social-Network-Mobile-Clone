@@ -7,13 +7,14 @@ import axios from 'axios';
 export default class PhotoFeed extends Component {
   constructor(props) {
     super(props);
+    this.api = 'http://10.0.2.2:3000';
     this.state = {
         photos: []
     };
   }
 
   componentDidMount() {
-    axios.get('http://10.0.2.2:3000/photos')
+    axios.get(`${this.api}/photos`)
         .then(res => {
             this.setState({photos: res.data});
         })

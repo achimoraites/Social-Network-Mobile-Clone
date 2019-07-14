@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/Header';
-import PhotoFeed from './components/PhotoFeed';
+import Header from './src/components/Header';
+import PhotoFeed from './src/components/PhotoFeed';
 export default function App() {
   return (
     <View>
