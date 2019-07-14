@@ -12,7 +12,6 @@ export default class PhotoFeed extends Component {
     };
   }
 
-
   componentDidMount() {
     axios.get('http://10.0.2.2:3000/photos')
         .then(res => {
