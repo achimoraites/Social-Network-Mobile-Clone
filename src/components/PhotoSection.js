@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Button } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { Card, Badge } from 'react-native-elements'
 export default class PhotoSection extends Component {
     constructor(props) {
         super(props);
@@ -14,12 +15,12 @@ export default class PhotoSection extends Component {
 
     toggleLike() {
 
-        this.setState({buttons: {like : !this.state.buttons.like }})
+        this.setState({ buttons: { like: !this.state.buttons.like } })
     }
 
     render() {
         return (
-            <View style={styles.container}>
+            <Card>
                 <View style={styles.userAvatarSection}>
                     <Image
                         style={styles.thumbnail}
@@ -29,12 +30,17 @@ export default class PhotoSection extends Component {
                     </View>
 
                 </View>
+
                 <View>
                     <Image
                         style={{ height: 300 }}
                         source={{ uri: this.props.photo.image }} />
                 </View>
+                <View style={{flexDirection: 'row', paddingTop: 10}}>
+                    <Badge containerStyle={this.props.photo.reactions.likes > 0 ? {display: 'flex'} : {display: 'none'}} value={this.props.photo.reactions.likes} />
+                </View>
                 <View style={{ paddingTop: 10, paddingBottom: 10 }}>
+
                     <TouchableWithoutFeedback onPress={this.toggleLike.bind(this)}>
                         <Ionicons
                             name={this.state.buttons.like ? "ios-heart" : "ios-heart-empty"}
@@ -48,7 +54,8 @@ export default class PhotoSection extends Component {
                     <Text style={styles.username}>{this.props.photo.username}</Text>
                     <Text>{this.props.photo.caption}</Text>
                 </View>
-            </View>
+
+            </Card>
         );
     }
 }
