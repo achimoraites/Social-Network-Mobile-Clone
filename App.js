@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+// Screens
 import PhotoFeedScreen from './src/screens/PhotoFeedScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 // redux
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -23,8 +25,8 @@ const tabBarOptions = {
 };
 
 const screens = {
-  Photos: {screen: PhotoFeedScreen
-        },
+  Photos: {screen: PhotoFeedScreen},
+  Profile: {screen: ProfileScreen}
       };
 const MainNavigator = 
 createMaterialTopTabNavigator(screens, tabBarOptions);
