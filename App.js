@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // Screens
 import PhotoFeedScreen from './src/screens/PhotoFeedScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
@@ -22,11 +23,22 @@ const tabBarOptions = {
     marginTop: 24,
     backgroundColor: 'blue'
   },
+  showIcon: false ,
+  showLabel: true,
+  activeTintColor: '#FFF',
+  labelStyle: {},
 };
 
 const screens = {
   Photos: {screen: PhotoFeedScreen},
-  Profile: {screen: ProfileScreen}
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      tabBarLabel: ({focused, tintColor:color}) => (
+        <Icon name="account" size={20} color={color} />
+      )
+   }
+  }
       };
 const MainNavigator = 
 createMaterialTopTabNavigator(screens, tabBarOptions);
