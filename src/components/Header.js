@@ -20,7 +20,7 @@ export default class Header extends Component {
 const styles = {
   container: {
     backgroundColor: '#fafbfc',
-    paddingTop: 18,
+    paddingTop: 0,
     alignItems: 'center',
     borderBottomColor: '#ddd',
     borderBottomWidth: 2,

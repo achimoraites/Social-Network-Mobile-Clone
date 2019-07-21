@@ -62,7 +62,7 @@ export default class PhotoSection extends Component {
 
 const styles = {
     container: {
-        margin: 5
+        margin: 0
     },
     userAvatarSection: {
         flexDirection: 'row',
